@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 type code struct {
 	Code  int16  `json:"code"`
@@ -30,5 +33,6 @@ func getTitle(c int16) (string, error) {
 			return code.Title, nil
 		}
 	}
+	fmt.Printf("No matching Response Status Code found for %d.", c)
 	return "", errors.New("No matching Response Status Code found.")
 }
