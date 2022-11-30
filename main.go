@@ -66,7 +66,7 @@ func main() {
 	router := gin.Default()
 	router.GET("/codes", codeList)
 
-	router.GET("/codes/code", searchByCode)
+	router.GET("/codes/code/:code", searchByCode)
 	router.GET("/codes/:code", searchByCode)
 
 	router.GET("/codes/title", searchByTitle)
